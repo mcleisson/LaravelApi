@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFilmesTable extends Migration
+class CreateClassificacaosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateFilmesTable extends Migration
      */
     public function up()
     {
-        Schema::create('filmes', function (Blueprint $table) {
+        Schema::create('classificacaos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
+            $table->integer('id_filme');
+            $table->integer('classificacao');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateFilmesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('filmes');
+        Schema::dropIfExists('classificacaos');
     }
 }
